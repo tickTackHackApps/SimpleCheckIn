@@ -26,14 +26,18 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        // wait for device is ready
+        document.addEventListener('devicereadyA', this.onDeviceReady, false);
+        
+        // Listen for the menubutton event to hide/show the menu
+    	document.addEventListener("menubutton", onMenuKeyDown, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.receivedEvent('devicereadyA');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,5 +49,24 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        
+       	// Options menu
+		var onSettings = function() {
+		    console.log("eclipse:: clicked Settings menu option");
+			$.mobile.changePage('#settings',{
+		        	transition: 'slide'
+		    	});
+		};
+
+	    var optionsmenu = new OptionsMenu({
+	        id: "optionsmenu",
+	        items: [ 
+	            [ {
+	                label: "Settings",
+	                image: "img/drawable-hdpi/ic_dialog_info.png",
+	                action: onSettings
+	            } ]
+	        ]
+	    });
     }
 };
