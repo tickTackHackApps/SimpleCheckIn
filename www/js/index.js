@@ -27,7 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         // wait for device is ready
-        document.addEventListener('devicereadyA', this.onDeviceReady, false);
+        document.addEventListener('deviceready', this.onDeviceReady, false);
         
         // Listen for the menubutton event to hide/show the menu
     	document.addEventListener("menubutton", onMenuKeyDown, false);
