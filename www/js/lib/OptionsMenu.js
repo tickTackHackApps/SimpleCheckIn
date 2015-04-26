@@ -40,7 +40,7 @@ var OptionsMenu = function(menu) {
             if (item.image) {
                 var imgItem = document.createElement("img");
                 imgItem.setAttribute("src", item.image);
-                if(item.image != "resources/images/drawable-hdpi/stat_sys_upload_anim0.png")  {
+                if(item.image != "img/drawable-hdpi/stat_sys_upload_anim0.png")  {
                 	imgItem.setAttribute("width", iconSize);
                 	imgItem.setAttribute("height", iconSize);
                 }
@@ -57,14 +57,12 @@ var OptionsMenu = function(menu) {
     
 function onMenuKeyDown() {
     	console.log('eclipse:: clicked menu button');
+    	alert("menu key pressed");
         if (menuDiv.style.display != 'none') {
             menuDiv.style.display = 'none';
         } else {
             menuDiv.style.display = 'block';
         }
-};
-
-    // Listen for the menubutton event to hide/show the menu
-    document.addEventListener("menubutton", onMenuKeyDown, false);
+	};
         
 };
