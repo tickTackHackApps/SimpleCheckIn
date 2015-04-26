@@ -32,16 +32,16 @@
     <body>
         <div class="app">
             <h1>Welcome to Dentures-4-Less</h1>
-            <div id="devicereadyA" class="blink">
+            <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
                 
                 <!-- Start app code here -->
                 <!-- HOMEPAGE -->
-                <p>12321dddddddddddddddddddd dwddddddddddddddddddddddddd</p>
+                <p>xxxdddddddddddddddddd dwddddddddddddddddddddddddd</p>
                 
             </div>
-            <div id="welcome" data-role="page">
+            <div id="welcome" data-role="page" data-theme="b">
 				<div data-role="header">
 			  		<span id="screen-title">Welcome!</span>
 				</div>
@@ -49,6 +49,10 @@
 					<p>Welcome! Please sign in.</p>
 				</div>
 			</div> <!-- div welcome page -->
+			
+			<div data-role="panel" id="navpanel" data-theme="a" data-display="overlay" data-position="right">
+				<a href="#" data-role="button">Settings</a>
+			</div>
         </div>
         
         <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>

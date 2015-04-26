@@ -30,15 +30,16 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         
         // Listen for the menubutton event to hide/show the menu
-    	document.addEventListener("menubutton", onMenuKeyDown, false);
+    	document.addEventListener("menubutton", this.onMenuKeyDown, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('devicereadyA');
+        app.receivedEvent('deviceready');
     },
+    
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
