@@ -30,7 +30,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         
         // Listen for the menubutton event to hide/show the menu
-    	document.addEventListener("menubutton", this.onMenuKeyDown, false);
+    	document.addEventListener("menubutton", OptionsMenu.onMenuKeyDown, false);
     },
     // deviceready Event Handler
     //
