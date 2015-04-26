@@ -55,7 +55,7 @@ var OptionsMenu = function(menu) {
     menuDiv.appendChild(menuTable);
    document.body.appendChild(menuDiv);
     
-function onMenuKeyDown() {
+/*function onMenuKeyDown() {
     	console.log('eclipse:: clicked menu button');
     	alert("menu key pressed");
         if (menuDiv.style.display != 'none') {
@@ -63,6 +63,6 @@ function onMenuKeyDown() {
         } else {
             menuDiv.style.display = 'block';
         }
-	};
+	};*/
         
 };

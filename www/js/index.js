@@ -30,7 +30,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         
         // Listen for the menubutton event to hide/show the menu
-    	document.addEventListener("menubutton", OptionsMenu.onMenuKeyDown, false);
+    	document.addEventListener("menubutton", this.onMenuKeyDown, false);
     },
     // deviceready Event Handler
     //
@@ -39,7 +39,21 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-    
+    onMenuKeyDown: function() {
+            	alert("menu key pressed");
+        if (menuDiv.style.display != 'none') {
+            menuDiv.style.display = 'none';
+        } else {
+            menuDiv.style.display = 'block';
+        }
+        var parentElement = document.getElementById('navpanel');
+        if (parentElement.style.display != 'none') {
+            parentElement.style.display = 'none';
+        } else {
+            parentElement.style.display = 'block';
+        }
+    },
+        
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
