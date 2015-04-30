@@ -31,6 +31,9 @@ var app = {
         
         // Listen for the menubutton event to hide/show the menu
     	document.addEventListener("menubutton", this.onMenuKeyDown, false);
+    	
+    	// Navigate pages
+    	this.transitionPages();
     },
     // deviceready Event Handler
     //
@@ -53,7 +56,21 @@ var app = {
             parentElement.style.display = 'block';
         }
     },
-        
+    transitionPages: function() {
+            var passDataObject = { selectedId: null };
+
+            $(document).on( "pageinit", "#step1", function( e ) {
+                $(this).find('a').unbind('click').click(function(e) {
+                    e.preventDefault();
+                    passDataObject.selectedId = $("#fname").val();
+                    $.mobile.changePage('#step2', { transition: 'flip'} );
+                });
+            });
+
+            $(document).on( "pagebeforeshow", "#step2", function( e ) {
+                $("#output").html(["Selected id is: '", passDataObject.selectedId, "'"].join(""));
+            });    	
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);

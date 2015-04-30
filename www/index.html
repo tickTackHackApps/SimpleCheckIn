@@ -30,31 +30,40 @@
         <title>Dentures-4-Less</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Welcome to Dentures-4-Less</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-                
-                <!-- Start app code here -->
-                <!-- HOMEPAGE -->
-                <p>xxxdddddddddddddddddd dwddddddddddddddddddddddddd</p>
-                
-            </div>
-            <div id="welcome" data-role="page" data-theme="b">
-				<div data-role="header">
-			  		<span id="screen-title">Welcome!</span>
-				</div>
-				<div data-role="content">
-					<p>Welcome! Please sign in.</p>
-				</div>
-			</div> <!-- div welcome page -->
-			
-			<div data-role="panel" id="navpanel" data-theme="a" data-display="overlay" data-position="right">
-				<a href="#" data-role="button">Settings</a>
+    	<!-- Start of start page -->
+        <div id="start" data-role="page" data-theme="b">
+			<div data-role="header">
+		  		<span id="screen-title">Welcome!</span>
 			</div>
-        </div>
-        
+				<div data-role="main" class="ui-content">
+					<a href="#step1" data-role="button">Touch Here to Sign-In</a>
+				</div> <!-- /main -->
+		</div> <!-- div /page -->
+		<!-- Start of step1 page -->
+        <div id="step1" data-role="page" data-theme="b">
+			<div data-role="header">
+		  		<span id="screen-title">Step 1</span>
+			</div>
+				<div data-role="main" class="ui-content">
+					<label for="fname" class="ui-hidden-accessible">First name:</label>
+      					<input type="text" name="fname" id="fname" placeholder="First name" data-clear-btn="true">
+      					<a href="#step2" data-role="button">Next</a>
+				</div>
+			</div> <!--/page -->
+		<!-- Start of step2 page -->
+        <div id="step2" data-role="page" data-theme="b">
+			<div data-role="header">
+		  		<span id="screen-title">Step 2</span>
+			</div>
+				<div data-role="main" class="ui-content">
+					<span id="output"></script></span>
+				</div>
+			</div> <!-- /page -->			
+		<div data-role="panel" id="navpanel" data-theme="a" data-display="overlay" data-position="right">
+			<a href="#" data-role="button">Settings</a>
+		</div>
+		
+		
         <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="js/lib/jquery-mobile/jquery.mobile.custom.min.js"></script>
         <script type="text/javascript" src="js/lib/jquery-mobile/jquery.mobile.custom.structure.min.css"></script>
