@@ -44,7 +44,7 @@ var app = {
     },
     onMenuKeyDown: function() {
             	alert("menu key pressed");
-        if (menuDiv.style.display != 'none') {
+    /*--    if (menuDiv.style.display != 'none') {
             menuDiv.style.display = 'none';
         } else {
             menuDiv.style.display = 'block';
@@ -54,7 +54,8 @@ var app = {
             parentElement.style.display = 'none';
         } else {
             parentElement.style.display = 'block';
-        }
+        } - */
+       $('#navpanel').panel('open');
     },
     transitionPages: function() {
             var passDataObject = { selectedId: null };
