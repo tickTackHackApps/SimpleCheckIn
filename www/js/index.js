@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        $.navigate.init();
     },
     // Bind Event Listeners
     //
@@ -58,18 +59,33 @@ var app = {
        $('#navpanel').panel('open');
     },
     transitionPages: function() {
-            var passDataObject = { selectedId: null };
+            var passDataObject = { fname: null, email: null, referral: null };
 
             $(document).on( "pageinit", "#step1", function( e ) {
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
-                    passDataObject.selectedId = $("#fname").val();
+                    passDataObject.fname = $("#fname").val();
                     $.mobile.changePage('#step2', { transition: 'flip'} );
                 });
             });
+            $(document).on( "pageinit", "#step2", function( e ) {
+                $(this).find('a').unbind('click').click(function(e) {
+                    e.preventDefault();
+                    passDataObject.email = $("#email").val();
+                    $.mobile.changePage('#step3', { transition: 'flip'} );
+                });
+            });
+            $(document).on( "pageinit", "#step3", function( e ) {
+                $(this).find('a').unbind('click').click(function(e) {
+                    e.preventDefault();
+                    passDataObject.referral= $("#referral").val();
+                    $.mobile.changePage('#output', { transition: 'flip'} );
+                });
+            });
 
-            $(document).on( "pagebeforeshow", "#step2", function( e ) {
-                $("#output").html(["Selected id is: '", passDataObject.selectedId, "'"].join(""));
+            $(document).on( "pagebeforeshow", "#done", function( e ) {
+                $("#output").html(["Selected id is: ", passDataObject.fname, passDataObject.email, passDataObject.referral]
+                	.join(", "));
             });    	
     },
     // Update DOM on a Received Event
