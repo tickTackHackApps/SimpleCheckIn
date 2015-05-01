@@ -66,10 +66,12 @@ var app = {
                     e.preventDefault();
                     passDataObject.fname = $("#fname").val();
                     $.mobile.changePage('#step2', { transition: 'flip'} );
-                    $('#email').focus();
+                    $('#email').focus(function () { $('#email').prompt(); });
+
                 });
             });
             $(document).on( "pageinit", "#step2", function( e ) {
+            	$('#email').focus(function () { $('#email').prompt(); });
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.email = $("#email").val();
