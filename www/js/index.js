@@ -79,7 +79,7 @@ var app = {
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.referral= $("#referral").val();
-                    $.mobile.changePage('#output', { transition: 'flip'} );
+                    $.mobile.changePage('#done', { transition: 'flip'} );
                 });
             });
 
