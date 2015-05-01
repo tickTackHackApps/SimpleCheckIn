@@ -66,6 +66,7 @@ var app = {
                     e.preventDefault();
                     passDataObject.fname = $("#fname").val();
                     $.mobile.changePage('#step2', { transition: 'flip'} );
+                    $('#email').focus();
                 });
             });
             $(document).on( "pageinit", "#step2", function( e ) {
@@ -73,6 +74,9 @@ var app = {
                     e.preventDefault();
                     passDataObject.email = $("#email").val();
                     $.mobile.changePage('#step3', { transition: 'flip'} );
+                     $('#referral').focus();
+                     $('#referral').prompt();
+                    
                 });
             });
             $(document).on( "pageinit", "#step3", function( e ) {
