@@ -59,29 +59,56 @@ var app = {
        $('#navpanel').panel('open');
     },
     transitionPages: function() {
-            var passDataObject = { fname: null, email: null, referral: null };
+            var passDataObject = { name: null, email: null, referral: null };
+            
+            $("#start").on( "pagebeforeshow", function( e ) {
+                passDataObject.name = null;
+                passDataObject.email = null;
+                passDataObject.referral = null;
+                console.log("loading start page");
 
-            $(document).on( "pageinit", "#step1", function( e ) {
+            }); 
+    
+            $("#step1").on( "pagecreate", function( e ) {
+            	console.log('triggered pagecreate step1');
                 $(this).find('a').unbind('click').click(function(e) {
+                	$("#name_keyboard").hide();
                     e.preventDefault();
-                    passDataObject.fname = $("#fname").val();
-                    $.mobile.changePage('#step2', { transition: 'flip'} );
-                    $('#email').focus(function () { $('#email').prompt(); });
-
+                    passDataObject.name = $("#name").val();
+                    $.mobile.changePage('#step2', { transition: 'flip'} );					
                 });
+              //'  $('#name').data('keyboard').reveal();
+                
+                 $('#name')
+					.keyboard( {
+						layout: 'qwerty', 
+						position: { 
+							of: '#name',
+							my: 'right top',
+							at: 'right top',
+							at2: 'center bottom'}, 
+						alwaysOpen: true,
+						//usePreview: false,
+						autoAccept: true,
+						//appendTo: '#name',
+						appendLocally: true
+						
+					})
+					.addMobile({container    : { theme:'c', cssClass:'ui-body' }})
+					;
             });
-            $(document).on( "pageinit", "#step2", function( e ) {
-            	$('#email').focus(function () { $('#email').prompt(); });
+
+            $("#step2").on( "pagecreate", function( e ) {
+            	console.log('triggered pagecreate step2');
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.email = $("#email").val();
                     $.mobile.changePage('#step3', { transition: 'flip'} );
-                     $('#referral').focus();
-                     $('#referral').prompt();
                     
                 });
+                
             });
-            $(document).on( "pageinit", "#step3", function( e ) {
+            $("#step3").on( "pagecreate", function( e ) {
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.referral= $("#referral").val();
@@ -90,9 +117,9 @@ var app = {
             });
 
             $(document).on( "pagebeforeshow", "#done", function( e ) {
-                $("#output").html(["Selected id is: ", passDataObject.fname, passDataObject.email, passDataObject.referral]
+                $("#output").html(["Selected id is: ", passDataObject.name, passDataObject.email, passDataObject.referral]
                 	.join(", "));
-            });    	
+            });    
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

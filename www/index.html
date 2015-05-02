@@ -27,6 +27,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/master.css" />
         <title>Dentures-4-Less</title>
     </head>
     <body>
@@ -36,7 +37,7 @@
 		  		<h1>Welcome to Dentrures-4-Less!</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<a href="#step1" data-role="button">Touch Here to Sign-In</a>
+				<a href="#step1" id="touchhere" data-role="button">Touch Here to Sign-In</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->
 		
@@ -46,9 +47,10 @@
 		  		<h1>Patient Information</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<label for="fname" class="ui-hidden-accessible">Name: </label>
-				<input type="text" name="fname" id="fname" placeholder="Enter your name" data-clear-btn="true">
+				<label for="name" class="ui-hidden-accessible">Name: </label>
+				<input type="text" name="name" id="name" placeholder="Enter your name" data-clear-btn="true">
 				<a href="#step2" data-role="button">Next</a>
+				<div id="keyboardhere"> </div>
 			</div> <!-- /main -->
 		</div> <!--/page -->
 			
@@ -83,7 +85,7 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				<p>You've been checked in. Please have a seat and we will be with you shortly.</p>
-				<a href="#start" data-role="button">Start over</a>
+				<a href="index.html" data-role="button" data-ajax="false">Start over</a>
 				<div id="output"></div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->			
@@ -100,6 +102,14 @@
         <script type="text/javascript" src="js/lib/navigate.min.js"></script>
         <script type="text/javascript" src="js/lib/json2-20150225.js"></script>
         <script type="text/javascript" src="js/lib/OptionsMenu.js"></script>
+        
+        <!-- Virtual Keyboard -->
+        <link rel="stylesheet" href="js/lib/Keyboard-master/css/keyboard-previewset.css" />
+        <link rel="stylesheet" href="js/lib/Keyboard-master/css/keyboard.css" />
+        <script type="text/javascript" src="js/lib/Keyboard-master/js/jquery.keyboard.extension-mobile.js"></script>   
+        <script type="text/javascript" src="js/lib/Keyboard-master/js/jquery.keyboard.extension-all.js"></script>
+        <script type="text/javascript" src="js/lib/Keyboard-master/js/jquery.keyboard.js"></script>        
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
