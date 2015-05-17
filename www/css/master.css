@@ -18,8 +18,8 @@ input[type="radio"]{
   margin: 0px 0px 19px 0px;
 }
 
-.ui-input-text input
-	font-size: 1.4em !important;
+.ui-input-text input {
+	font-size: 1.3em !important;
 }
 
 .ui-input-text input:not(#email) {
