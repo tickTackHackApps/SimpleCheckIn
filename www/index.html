@@ -48,10 +48,10 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				
-				<label for="name" >First Name: </label>
-				<input type="text" name="name" id="name" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required autofocus>
-				<label for="name" >Last Name: </label>
-				<input type="text" name="lname" id="lname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required>
+				<label for="firstname" >First Name: </label>
+				<input type="text" name="firstname" id="firstname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required autofocus>
+				<label for="lastname" >Last Name: </label>
+				<input type="text" name="lastname" id="lastname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required>
 				<a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
 			</div> <!-- /main -->
 		</div> <!--/page -->
@@ -64,10 +64,31 @@
 			<div data-role="main" class="ui-content">
 				<label for="email" >Email address: </label>
 				<input type="email" name="email" id="email" placeholder="Touch here to type" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" title="Valid email address" data-clear-btn="true">
+				<a href="#datepicker" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
+			</div> <!-- /main -->
+		</div> <!-- /page -->	
+
+		<!-- Start of datepicker page -->
+        <div id="datepicker" data-role="page" data-theme="e">
+			<div data-role="header">
+		  		<h1>What is your scheduled appointment time?</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+				<div class="ui-field-contain">
+				    <label for="notifTime">Appointment Time:</label>
+				    <input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true, "useSetButton": false, "useHeader": false, "useImmediate":true, "hideInput":true, "useInline":true, "minuteStep": 15, "overrideTimeFormat": 12, "themeButton": "e", "themeInput": "e", "theme": "e", "themeHeader": "e"}'/>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend></legend>
+					     	<input type="radio" name="radio-noappt" id="radio-noappt" value="NoAppointment" />
+					     	<label for="radio-noappt">No appointment / Walk-in</label>
+					  </fieldset>
+				</div>
 				<a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
-		
+				
 		<!-- Start of step3 page -->
         <div id="step3" data-role="page" data-theme="e">
 			<div data-role="header">
@@ -75,30 +96,29 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				<div data-role="fieldcontain">
-
-				<fieldset data-role="controlgroup">
-					<legend></legend>
-				     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
-				     	<label for="radio-choice-1">Don't remember or Prefer Not to Say</label>
-
-				     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
-				     	<label for="radio-choice-2">Referral</label>
-				     					
-				     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
-				     	<label for="radio-choice-3">Print Ad / Brochure</label>
-				
-				     	<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
-				     	<label for="radio-choice-4">TV Commercial</label>
-				
-				     	<input type="radio" name="radio-choice" id="radio-choice-5" value="choice-5"  />
-				     	<label for="radio-choice-5">Facebook</label>
-				     	
-				     	<input type="radio" name="radio-choice" id="radio-choice-6" value="choice-6"  />
-				     	<label for="radio-choice-6">Dentures-4-Less Website</label>	
-				     	
-						<input type="radio" name="radio-choice" id="radio-choice-7" value="choice-7"  />
-				     	<label for="radio-choice-7">Other</label>						
-				</fieldset>
+					<fieldset data-role="controlgroup">
+						<legend></legend>
+					     	<input type="radio" name="radio-referral" id="radio-referral-1" value="None" checked="checked" />
+					     	<label for="radio-referral-1">Don't remember or Prefer Not to Say</label>
+	
+					     	<input type="radio" name="radio-referral" id="radio-referral-2" value="Referral"  />
+					     	<label for="radio-referral-2">Referral</label>
+					     					
+					     	<input type="radio" name="radio-referral" id="radio-referral-3" value="Print-Ad"  />
+					     	<label for="radio-referral-3">Print Ad / Brochure</label>
+					
+					     	<input type="radio" name="radio-referral" id="radio-referral-4" value="TV-Ad"  />
+					     	<label for="radio-referral-4">TV Commercial</label>
+					
+					     	<input type="radio" name="radio-referral" id="radio-referral-5" value="Facebook"  />
+					     	<label for="radio-referral-5">Facebook</label>
+					     	
+					     	<input type="radio" name="radio-referral" id="radio-referral-6" value="Website"  />
+					     	<label for="radio-referral-6">Dentures-4-Less Website</label>	
+					 
+							<input type="radio" name="radio-referral" id="radio-referral-7" value="Other"  />
+					     	<label for="radio-referral-7">Other</label>						
+					</fieldset>
 				</div>
 				
 				<a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a>
@@ -112,7 +132,9 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				<p>You've been checked in. Please have a seat and we will be with you shortly.</p>
-				<a href="index.html" data-role="button" data-ajax="false" data-icon="refresh">Start over</a>
+				<div class="center-wrapper" style="margin-top: 175px; margin-left: auto;">
+					<a href="index.html" data-role="button" data-ajax="false" data-icon="refresh">Start over</a>
+				</div>
 				<div id="output"></div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->			
@@ -133,7 +155,11 @@
 
 
         <link rel="stylesheet" type="text/css" href="css/master.css" />
-                
+
+        <!-- JQM Datebox-->
+        <link rel="stylesheet" href="js/lib/Datebox/jqm-datebox-1.4.5.min.css" />
+        <script type="text/javascript" src="js/lib/Datebox/jqm-datebox-1.4.5.min.js"></script> 
+                        
         <!-- Virtual Keyboard -->
         <!--<link rel="stylesheet" href="js/lib/Keyboard-master/css/keyboard-previewset.css" />
         <link rel="stylesheet" href="js/lib/Keyboard-master/css/keyboard.css" />

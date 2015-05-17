@@ -59,11 +59,13 @@ var app = {
        $('#navpanel').panel('open');
     },
     transitionPages: function() {
-            var passDataObject = { name: null, email: null, referral: null };
+            var passDataObject = { firstname: null, lastname: null, email: null, appttime: null, referral: null };
             
             $("#start").on( "pagebeforeshow", function( e ) {
-                passDataObject.name = null;
+                passDataObject.firstname = null;
+                passDataObject.lastname = null;
                 passDataObject.email = null;
+                passDataObject.appttime = null;
                 passDataObject.referral = null;
                 console.log("loading start page");
 
@@ -74,7 +76,8 @@ var app = {
                 $(this).find('a').unbind('click').click(function(e) {
                 	$("#name_keyboard").hide();
                     e.preventDefault();
-                    passDataObject.name = $("#name").val();
+                    passDataObject.firstname = $("#firstname").val();
+                    passDataObject.lastname = $("#lastname").val();
                     $.mobile.changePage('#step2', { transition: 'flip'} );					
                 });
             });
@@ -84,23 +87,47 @@ var app = {
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.email = $("#email").val();
-                    $.mobile.changePage('#step3', { transition: 'flip'} );
+                    $.mobile.changePage('#datepicker', { transition: 'flip'} );
                     
                 });
                 
             });
+            
+            $("#datepicker").on( "pagecreate", function( e ) {
+            	console.log('triggered pagecreate datepicker');
+                $(this).find('a').unbind('click').click(function(e) {
+                    e.preventDefault();
+                    
+                    if($('#radio-noappt').is(':checked')) { 
+                    	passDataObject.appttime = "Walk-in";
+                    }
+                    else { passDataObject.appttime = $("#apptTime").val(); }
+                    $.mobile.changePage('#step3', { transition: 'flip'} );
+                    
+                });
+                
+            });            
             $("#step3").on( "pagecreate", function( e ) {
                 $(this).find('a').unbind('click').click(function(e) {
                     e.preventDefault();
-                    passDataObject.referral= $("#referral").val();
+                    $("input[id*=radio-referral-]:checked").each(function() {
+        				passDataObject.referral=$(this).val();
+   					 });
                     $.mobile.changePage('#done', { transition: 'flip'} );
                 });
             });
 
             $(document).on( "pagebeforeshow", "#done", function( e ) {
-                $("#output").html(["Selected id is: ", passDataObject.name, passDataObject.email, passDataObject.referral]
+                $("#output").html("Input values are: " + [passDataObject.firstname, passDataObject.lastname, passDataObject.email, passDataObject.appttime, passDataObject.referral]
                 	.join(", "));
             });    
+            
+            $("#done").on( "pagecreate", function( e ) {
+				setTimeout(
+				  function() { window.location.replace("index.html"); }, 
+				  10000
+				);
+            });            
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
