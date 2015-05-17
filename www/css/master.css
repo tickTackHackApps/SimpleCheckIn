@@ -1,18 +1,7 @@
-html,
-body,
-#step1 {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.ui-content {
-  padding: 0;
-}
-.ui-content,
-.ui-content #full-height {
-  height: inherit; /* the trick */
-}
-
+/* 
+ * Maunally added css
+ *  
+*/
 input[type="radio"]{
   margin: 5px 0px 5px 0px;
 }
@@ -25,6 +14,11 @@ input[type="radio"]{
   margin: 0 auto;
 }
 
-.ui-input-text input {
+.ui-input-text {
+  margin: 0px 0px 19px 0px;
+}
+
+.ui-input-text input:not(#email) {
 	font-size: 1.4em !important;
+	text-transform:uppercase;  /* make all typed input uppercase */
 }
