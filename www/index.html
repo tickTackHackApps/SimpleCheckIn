@@ -49,12 +49,15 @@
 		  		<h1>Patient Information</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				
-				<label for="firstname" >First Name: </label>
-				<input type="text" name="firstname" id="firstname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required autofocus>
-				<label for="lastname" >Last Name: </label>
-				<input type="text" name="lastname" id="lastname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required>
-				<a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
+				<div class="col-left">
+					<label for="firstname" >First Name: </label>
+					<input type="text" name="firstname" id="firstname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required autofocus>
+					<label for="lastname" >Last Name: </label>
+					<input type="text" name="lastname" id="lastname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required>
+				</div>
+				<div class="col-right">
+					<div class="btn-bottom"><a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
+				</div>
 			</div> <!-- /main -->
 		</div> <!--/page -->
 			
@@ -66,7 +69,7 @@
 			<div data-role="main" class="ui-content">
 				<label for="email" >Email address: </label>
 				<input type="email" name="email" id="email" placeholder="Touch here to type" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" title="Valid email address" data-clear-btn="true">
-				<a href="#datepicker" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
+				<div style="float:right;"><a href="#datepicker" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 
@@ -76,18 +79,22 @@
 		  		<h1>What is your scheduled appointment time?</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<div class="ui-field-contain">
-				    <label for="notifTime">Appointment Time:</label>
-				    <input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true, "useSetButton": false, "useHeader": false, "useImmediate":true, "hideInput":true, "useInline":true, "minuteStep": 15, "overrideTimeFormat": 12, "themeButton": "e", "themeInput": "e", "theme": "e", "themeHeader": "e"}'/>
-				</div>
-				<div data-role="fieldcontain">
-					<fieldset data-role="controlgroup">
-						<legend></legend>
-					     	<input type="radio" name="radio-noappt" id="radio-noappt" value="NoAppointment" />
-					     	<label for="radio-noappt">No appointment / Walk-in</label>
-					  </fieldset>
-				</div>
-				<a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
+				<div class="col-left">
+					<div class="ui-field-contain">
+					    <label for="notifTime">Appointment Time:</label>
+					    <input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true, "useSetButton": false, "useHeader": false, "useImmediate":true, "hideInput":true, "useInline":true, "minuteStep": 15, "overrideTimeFormat": 12, "themeButton": "e", "themeInput": "e", "theme": "e", "themeHeader": "e"}'/>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend></legend>
+						     	<input type="radio" name="radio-noappt" id="radio-noappt" value="NoAppointment" />
+						     	<label for="radio-noappt">No appointment / Walk-in</label>
+						  </fieldset>
+					</div>
+			</div> <!-- /col-left -->
+				<div class="col-right">
+					<div class="btn-bottom"><a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
+				</div> <!-- /col-right -->
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 				
@@ -97,33 +104,35 @@
 		  		<h1>How did you hear about us?</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<div data-role="fieldcontain">
-					<fieldset data-role="controlgroup">
-						<legend></legend>
-					     	<input type="radio" name="radio-referral" id="radio-referral-1" value="None" checked="checked" />
-					     	<label for="radio-referral-1">Don't remember or Prefer Not to Say</label>
-	
-					     	<input type="radio" name="radio-referral" id="radio-referral-2" value="Referral"  />
-					     	<label for="radio-referral-2">Referral</label>
-					     					
-					     	<input type="radio" name="radio-referral" id="radio-referral-3" value="Print-Ad"  />
-					     	<label for="radio-referral-3">Print Ad / Brochure</label>
-					
-					     	<input type="radio" name="radio-referral" id="radio-referral-4" value="TV-Ad"  />
-					     	<label for="radio-referral-4">TV Commercial</label>
-					
-					     	<input type="radio" name="radio-referral" id="radio-referral-5" value="Facebook"  />
-					     	<label for="radio-referral-5">Facebook</label>
-					     	
-					     	<input type="radio" name="radio-referral" id="radio-referral-6" value="Website"  />
-					     	<label for="radio-referral-6">Dentures-4-Less Website</label>	
-					 
-							<input type="radio" name="radio-referral" id="radio-referral-7" value="Other"  />
-					     	<label for="radio-referral-7">Other</label>						
-					</fieldset>
+				<div class="col-left">
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+						     	<input type="radio" name="radio-referral" id="radio-referral-1" value="None" checked="checked" />
+						     	<label for="radio-referral-1">Don't remember or Prefer Not to Say</label>
+		
+						     	<input type="radio" name="radio-referral" id="radio-referral-2" value="Referral"  />
+						     	<label for="radio-referral-2">Referral</label>
+						     					
+						     	<input type="radio" name="radio-referral" id="radio-referral-3" value="Print-Ad"  />
+						     	<label for="radio-referral-3">Print Ad / Brochure</label>
+						
+						     	<input type="radio" name="radio-referral" id="radio-referral-4" value="TV-Ad"  />
+						     	<label for="radio-referral-4">TV Commercial</label>
+						
+						     	<input type="radio" name="radio-referral" id="radio-referral-5" value="Facebook"  />
+						     	<label for="radio-referral-5">Facebook</label>
+						     	
+						     	<input type="radio" name="radio-referral" id="radio-referral-6" value="Website"  />
+						     	<label for="radio-referral-6">Dentures-4-Less Website</label>	
+						 
+								<input type="radio" name="radio-referral" id="radio-referral-7" value="Other"  />
+						     	<label for="radio-referral-7">Other</label>						
+						</fieldset> <!-- controlgroup -->
+					</div> <!-- /fieldcontain -->
 				</div>
-				
-				<a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a>
+				<div class="col-right">
+					<div class="btn-bottom"><a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a></div>
+				</div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 		
