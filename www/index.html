@@ -37,7 +37,7 @@
 		  		<h1>Welcome to Dentrures-4-Less!</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<a href="#step1" id="touchhere" data-role="button">Touch Here to Sign-In</a>
+				<a href="#step1" id="touchhere" data-role="button" data-inline="true" data-icon="star">Touch Here to Sign-In</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->
 		
@@ -49,17 +49,10 @@
 			<div data-role="main" class="ui-content">
 				
 				<label for="name" >First Name: </label>
-				<input type="text" name="name" id="name" placeholder="Touch here to enter your first name" data-clear-btn="true" required autofocus>
+				<input type="text" name="name" id="name" placeholder="Touch here to enter your first name" data-clear-btn="true" maxlength="25" autocomplete="off" required autofocus>
 				<label for="name" >Last Name: </label>
-				<input type="text" name="lname" id="lname" placeholder="Touch here to enter your last name" data-clear-btn="true" required>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<input type="time" name="apptime"/>
-				<a href="#step2" data-role="button">Next</a>
+				<input type="text" name="lname" id="lname" placeholder="Touch here to enter your last name" data-clear-btn="true" maxlength="25" autocomplete="off" required>
+				<a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
 			</div> <!-- /main -->
 		</div> <!--/page -->
 			
@@ -71,7 +64,7 @@
 			<div data-role="main" class="ui-content">
 				<label for="email" class="ui-hidden-accessible">Email address: </label>
 				<input type="email" name="email" id="email" placeholder="Email address" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" title="Valid email address" data-clear-btn="true">
-				<a href="#step3" data-role="button">Next</a>
+				<a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 		
@@ -83,7 +76,7 @@
 			<div data-role="main" class="ui-content">
 				<label for="referral" class="ui-hidden-accessible">Referral: </label>
 				<input type="text" name="referral" id="referral" placeholder="Referral" data-clear-btn="true">
-				<a href="#done" data-role="button">Submit</a>
+				<a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 		
