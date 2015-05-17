@@ -71,13 +71,39 @@
 		</div> <!-- /page -->	
 		
 		<!-- Start of step3 page -->
-        <div id="step3" data-role="page" data-theme="c">
+        <div id="step3" data-role="page" data-theme="e">
 			<div data-role="header">
 		  		<h1>How did you hear about us?</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<label for="referral" class="ui-hidden-accessible">Referral: </label>
-				<input type="text" name="referral" id="referral" placeholder="Referral" data-clear-btn="true">
+				<div data-role="fieldcontain">
+
+				<fieldset data-role="controlgroup">
+					<legend></legend>
+				     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+				     	<label for="radio-choice-1">Don't remember or Prefer Not to Say</label>
+
+				     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+				     	<label for="radio-choice-2">Referral</label>
+				     					
+				     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+				     	<label for="radio-choice-3">Print Ad / Brochure</label>
+				
+				     	<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
+				     	<label for="radio-choice-4">TV Commercial</label>
+				
+				     	<input type="radio" name="radio-choice" id="radio-choice-5" value="choice-5"  />
+				     	<label for="radio-choice-5">Facebook</label>
+				     	
+				     	<input type="radio" name="radio-choice" id="radio-choice-6" value="choice-6"  />
+				     	<label for="radio-choice-6">Dentures-4-Less Website</label>	
+				     	
+						<input type="radio" name="radio-choice" id="radio-choice-7" value="choice-7"  />
+				     	<label for="radio-choice-7">Other</label>						
+				</fieldset>
+				</div>
+				
+				
 				<a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
