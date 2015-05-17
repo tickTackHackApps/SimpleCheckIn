@@ -20,6 +20,11 @@ input[type="radio"]{
 .center-wrapper{
   text-align: center;
 }
+
 .center-wrapper * {
   margin: 0 auto;
+}
+
+.ui-input-text input {
+	font-size: 1.4em !important;
 }
