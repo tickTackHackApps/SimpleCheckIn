@@ -70,8 +70,8 @@ var app = {
                 console.log("loading start page");
 
             }); 
-    
-            $("#step1").on( "pagecreate", function( e ) {
+                
+        	$("#step1").on( "pagecreate", function( e ) {
             	console.log('triggered pagecreate step1');
                 $(this).find('a').unbind('click').click(function(e) {
                 	$("#name_keyboard").hide();
@@ -125,7 +125,7 @@ var app = {
             $("#done").on( "pagecreate", function( e ) {
 				setTimeout(
 				  function() { window.location.replace("index.html"); }, 
-				  10000
+				  30000
 				);
             });            
     },

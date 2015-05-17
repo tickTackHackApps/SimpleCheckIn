@@ -27,10 +27,24 @@ input[type="radio"]{
 }
 
 .ui-controlgroup-controls {
-	width: 33% !important;	
+	width: 50% !important;
+	margin: auto !important;
 }
 
 ui-input-text input[id="apptTime"] {
 	width:50%;
 	margin-bottom:30px;
+}
+
+label {
+	font-size: 1.5em !important;
+}
+
+p {
+	font-size: 2.3em;
+	margin: 30px !important;
+}
+
+a { 
+	font-size: 1.7em !important;	
 }
