@@ -18,7 +18,10 @@ input[type="radio"]{
   margin: 0px 0px 19px 0px;
 }
 
-.ui-input-text input:not(#email) {
+.ui-input-text input
 	font-size: 1.4em !important;
+}
+
+.ui-input-text input:not(#email) {
 	text-transform:uppercase;  /* make all typed input uppercase */
 }
