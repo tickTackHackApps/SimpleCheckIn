@@ -47,8 +47,17 @@
 		  		<h1>Patient Information</h1>
 			</div>
 			<div data-role="main" class="ui-content">
+				
 				<label for="name" >Full Name: </label>
-				<input type="text" name="name" id="name" placeholder="Enter your name" data-clear-btn="true">
+				<input type="text" name="name" id="name" placeholder="Enter your name" data-clear-btn="true" required autofocus>
+				<input type="text" name="name" id="name" placeholder="Enter your name" data-clear-btn="true" required autofocus>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
+				<input type="time" name="apptime"/>
 				<a href="#step2" data-role="button">Next</a>
 			</div> <!-- /main -->
 		</div> <!--/page -->
@@ -60,7 +69,7 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				<label for="email" class="ui-hidden-accessible">Email address: </label>
-				<input type="email" name="email" id="email" placeholder="Email address" data-clear-btn="true">
+				<input type="email" name="email" id="email" placeholder="Email address" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" title="Valid email address" data-clear-btn="true">
 				<a href="#step3" data-role="button">Next</a>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
