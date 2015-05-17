@@ -79,7 +79,7 @@ var app = {
                 });
               //'  $('#name').data('keyboard').reveal();
                 
-                 $('#name')
+               /*  $('#name')
 					.keyboard( {
 						layout: 'qwerty', 
 						position: { 
@@ -95,7 +95,7 @@ var app = {
 						
 					})
 					.addMobile({container    : { theme:'c', cssClass:'ui-body' }})
-					;
+					;*/
             });
 
             $("#step2").on( "pagecreate", function( e ) {
