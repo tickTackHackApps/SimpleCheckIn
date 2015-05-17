@@ -35,10 +35,10 @@
 		  		<h1>Dentures-4-Less  |  Keith F. Theodore, DDS</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<div class="center-wrapper" style="margin-top: 200px; margin-left: auto;">
+				<div class="center-wrapper" style="margin-top: 150px; margin-left: auto;">
 					<p>Welcome! Please check-in here</p>
 					<p>By answering a few short questions.</p>
-					<a href="#step1" id="touchhere" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Touch Here to<br/>Begin</a>
+					<a href="#step1" id="touchhere" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" class="next">Touch Here to<br/>Begin</a>
 				</div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->
@@ -56,7 +56,7 @@
 					<input type="text" name="lastname" id="lastname" placeholder="Touch here to type" data-clear-btn="true" maxlength="25" autocomplete="off" required>
 				</div>
 				<div class="col-right">
-					<div class="btn-bottom"><a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
+					<div class="btn-bottom"><a href="#step2" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" class="next">Next</a></div>
 				</div>
 			</div> <!-- /main -->
 		</div> <!--/page -->
@@ -69,7 +69,7 @@
 			<div data-role="main" class="ui-content">
 				<label for="email" >Email address: </label>
 				<input type="email" name="email" id="email" placeholder="Touch here to type" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" title="Valid email address" data-clear-btn="true">
-				<div style="float:right;"><a href="#datepicker" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
+				<div style="float:right;"><a href="#datepicker" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" class="next">Next</a></div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
 
@@ -82,7 +82,8 @@
 				<div class="col-left">
 					<div class="ui-field-contain">
 					    <label for="notifTime">Appointment Time:</label>
-					    <input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true, "useSetButton": false, "useHeader": false, "useImmediate":true, "hideInput":true, "useInline":true, "minuteStep": 15, "overrideTimeFormat": 12, "themeButton": "e", "themeInput": "e", "theme": "e", "themeHeader": "e"}'/>
+					    <!--<input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true, "useSetButton": false, "useHeader": false, "useImmediate":true, "hideInput":true, "useInline":true, "minuteStep": 15, "overrideTimeFormat": 12, "themeButton": "e", "themeInput": "e", "theme": "e", "themeHeader": "e", }'/>-->
+					    <input name="apptTime" id="apptTime" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useInline":true, "useImmediate":true, "minuteStep": 15, "hideInput":true, "useSetButton": false}'/>
 					</div>
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
@@ -93,7 +94,7 @@
 					</div>
 			</div> <!-- /col-left -->
 				<div class="col-right">
-					<div class="btn-bottom"><a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">Next</a></div>
+					<div class="btn-bottom"><a href="#step3" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right" class="next">Next</a></div>
 				</div> <!-- /col-right -->
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
@@ -131,7 +132,7 @@
 					</div> <!-- /fieldcontain -->
 				</div>
 				<div class="col-right">
-					<div class="btn-bottom"><a href="#done" data-role="button" data-inline="true" data-icon="check">Submit</a></div>
+					<div class="btn-bottom"><a href="#done" data-role="button" data-inline="true" data-icon="check" class="next">Submit</a></div>
 				</div>
 			</div> <!-- /main -->
 		</div> <!-- /page -->	
@@ -142,7 +143,7 @@
 		  		<h1>Dentures-4-Less | Keith F. Theodore, DDS</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<div class="center-wrapper" style="margin-top: 200px; margin-left: auto;">
+				<div class="center-wrapper" style="margin-top: 150px; margin-left: auto;">
 				<p>Thank you!</p>
 				<p>Please be seated and the receptionist will be with you shortly.</p>
 				<a href="index.html" data-role="button" data-ajax="false" data-icon="refresh">Start over</a>

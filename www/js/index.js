@@ -73,7 +73,7 @@ var app = {
                 
         	$("#step1").on( "pagecreate", function( e ) {
             	console.log('triggered pagecreate step1');
-                $(this).find('a').unbind('click').click(function(e) {
+                $(this).find('.next').unbind('click').click(function(e) {
                 	$("#name_keyboard").hide();
                     e.preventDefault();
                     passDataObject.firstname = $("#firstname").val();
@@ -84,7 +84,7 @@ var app = {
 
             $("#step2").on( "pagecreate", function( e ) {
             	console.log('triggered pagecreate step2');
-                $(this).find('a').unbind('click').click(function(e) {
+                $(this).find('.next').unbind('click').click(function(e) {
                     e.preventDefault();
                     passDataObject.email = $("#email").val();
                     $.mobile.changePage('#datepicker', { transition: 'flip'} );
@@ -95,7 +95,7 @@ var app = {
             
             $("#datepicker").on( "pagecreate", function( e ) {
             	console.log('triggered pagecreate datepicker');
-                $(this).find('a').unbind('click').click(function(e) {
+                $(this).find('.next').unbind('click').click(function(e) {
                     e.preventDefault();
                     
                     if($('#radio-noappt').is(':checked')) { 
@@ -108,7 +108,7 @@ var app = {
                 
             });            
             $("#step3").on( "pagecreate", function( e ) {
-                $(this).find('a').unbind('click').click(function(e) {
+                $(this).find('.next').unbind('click').click(function(e) {
                     e.preventDefault();
                     $("input[id*=radio-referral-]:checked").each(function() {
         				passDataObject.referral=$(this).val();

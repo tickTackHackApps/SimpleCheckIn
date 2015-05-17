@@ -36,6 +36,9 @@ ui-input-text input[id="apptTime"] {
 	margin-bottom:30px;
 }
 
+.ui-field-contain {
+	border: none;
+}
 label {
 	font-size: 1.5em !important;
 }
@@ -59,5 +62,5 @@ a {
 }
 .btn-bottom {
     position:relative;
-    margin-top:55%;
+    margin-top:65%;
 }​
