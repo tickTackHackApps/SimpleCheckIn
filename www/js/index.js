@@ -77,25 +77,6 @@ var app = {
                     passDataObject.name = $("#name").val();
                     $.mobile.changePage('#step2', { transition: 'flip'} );					
                 });
-              //'  $('#name').data('keyboard').reveal();
-                
-               /*  $('#name')
-					.keyboard( {
-						layout: 'qwerty', 
-						position: { 
-							of: '#name',
-							my: 'right top',
-							at: 'right top',
-							at2: 'center bottom'}, 
-						alwaysOpen: true,
-						//usePreview: false,
-						autoAccept: true,
-						//appendTo: '#name',
-						appendLocally: true
-						
-					})
-					.addMobile({container    : { theme:'c', cssClass:'ui-body' }})
-					;*/
             });
 
             $("#step2").on( "pagecreate", function( e ) {
